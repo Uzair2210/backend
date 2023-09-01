@@ -1,8 +1,22 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
 
 
-console.log("dkvfvbfrv")
+const productRoutes = require('./routes/products');
+const customerRoutes = require('./routes/customers');
+
+
+
+app.use('/api/products',productRoutes)
+app.use('/api/customers',customerRoutes)
+
+
+
+
+
+app.get('/', function (req, res) {
+    res.send("<h1>This is the main page</h1>")
+})
 
 
 
