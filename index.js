@@ -1,25 +1,25 @@
-const express = require('express');
-const app = express();
-
-
-const productRoutes = require('./routes/products');
-const customerRoutes = require('./routes/customers');
-
-
-
-app.use('/api/products',productRoutes)
-app.use('/api/customers',customerRoutes)
+const express = require('express')
+const app = express()
+const studentsRoutes = require('./routes/students')
+const mongoose = require('mongoose')
 
 
 
+app.use(express.json())
+app.use('/api/students',studentsRoutes)
 
 
-app.get('/', function (req, res) {
-    res.send("<h1>This is the main page</h1>")
+
+mongoose.connect('mongodb+srv://umairjutt2025:umairjutt2025@umair-cluster.oducycs.mongodb.net/batch5?retryWrites=true&w=majority').then((res)=>{
+    console.log("Connected!")
+}).catch((err)=>{
+    console.log(err.message)
 })
 
 
 
-app.listen(3000,()=>{
-    console.log("Server is Running...")
+var port = process.env.PORT || 3000
+
+app.listen(port, () => {
+    console.log("server is running")
 })
