@@ -14,6 +14,7 @@ router.get('/',async function (req, res) {
 })
 
 
+
 router.put('/',async function (req, res) {
     await studentModel.findByIdAndUpdate(req.query.id,{$set:req.body})
     res.send("Student Updated Successfully!")

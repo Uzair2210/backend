@@ -10,7 +10,7 @@ app.use('/api/students',studentsRoutes)
 
 
 
-mongoose.connect('mongodb+srv://uzair27140:<password>@uzaircluster.fdml45t.mongodb.net/?retryWrites=true&w=majority').then((res)=>{
+mongoose.connect('mongodb://127.0.0.1:27017').then((res)=>{
     console.log("Connected!")
 }).catch((err)=>{
     console.log(err.message)
