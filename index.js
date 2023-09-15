@@ -9,8 +9,8 @@ app.use(express.json())
 app.use('/api/students',studentsRoutes)
 
 
+mongoose.connect('mongodb+srv://uzair-cluster:uzair2552@uzaircluster.fdml45t.mongodb.net/backend?retryWrites=true&w=majority').then((res)=>{
 
-mongoose.connect('mongodb+srv://uzair-cluster:uzair2552@uzaircluster.fdml45t.mongodb.net/uzair?retryWrites=true&w=majority').then((res)=>{
     console.log("Connected!")
 }).catch((err)=>{
     console.log(err.message)
