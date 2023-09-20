@@ -1,0 +1,58 @@
+<html lang="en" dir="ltr" data-arp-injected="true"><head>
+    <meta charset="UTF-8">
+    <title> Responsive Registration Form | CodingLab </title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <style>
+      *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .admission-main{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        background-color: #0f0f1a;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .admission-main>h1{
+        font-size: 4vw;
+        color: #fff;
+      }
+      .admission-main>a{
+        border: 1px solid #fff;
+        margin-top: 2vw;
+        text-decoration: none;
+        color: #fff;
+        background-color: #1e213a;
+        border-radius: 8px;
+        font-size: 1.5vw;
+        padding: 1vw 2vw;
+      }      
+      .admission-main>a:hover{
+        box-shadow: 0 0 10px 0.1px #fff;
+        animation: hoverani;
+        animation-fill-mode: forwards;
+        animation-duration: 0.4s;
+        animation-timing-function: ease-in;
+      }
+      @keyframes hoverani {
+        from{
+          padding: 1vw 2vw;
+        }
+        to{
+          padding: 1.5vw 3.5vw;
+        }
+      }
+     </style>
+   </head>
+<body>
+  <div class="admission-main">
+    <h1>This is our Home Page</h1>
+    <a href="/login">Login Here</a>
+  </div>
+
+</body></html>
