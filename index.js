@@ -37,7 +37,7 @@ app.get("/dashboard",(req,res)=>{
     if(req.cookies.accessToken){
 
         try {
-            var isTokenValid = jwt.verify(req.cookies.accessToken,"ajsdfSDKFJ%&&$4773")
+            var isTokenValid = jwt.verify(req.cookies.accessToken,"uiop@@4743")
             console.log(isTokenValid)
         } catch (error) {
             res.redirect('/login')
