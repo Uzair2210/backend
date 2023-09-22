@@ -38,17 +38,22 @@ app.get("/dashboard",(req,res)=>{
 
         try {
             var isTokenValid = jwt.verify(req.cookies.accessToken,"uiop@@4743")
-            console.log(isTokenValid)
         } catch (error) {
+            try {
+                var isTokenValid = jwt.verify(req.cookies.refreshToken, "uiop@@4743")
+
+                var token = jwt.sign({ username: "admin" }, "uiop@@4743", { expiresIn: "30s" })
+                var token1 = jwt.sign({ username: "admin" }, "uiop@@4743", { expiresIn: "7d" })
+
+                res.cookie("accessToken", token, { secure: true, httpOnly: true })
+                res.cookie("refreshToken", token1, { secure: true, httpOnly: true })
+
+
+            } catch (error) {
             res.redirect('/login')
         }
-
-
-        
-
-
-
-    }else{
+    }
+ } else{
         res.redirect('/login')
     }
 

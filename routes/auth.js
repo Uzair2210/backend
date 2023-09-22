@@ -6,10 +6,8 @@ router.post("/login", async (req, res) => {
     try {
         
 
-        // Data stored in DB at the time of registration
         var data = {username:"admin",password:"admin123"}
 
-        // JSON WEB TOKEN   (JWT)
         var userData = req.body
 
 
