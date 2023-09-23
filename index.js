@@ -27,7 +27,8 @@ app.get("/login",(req,res)=>{
         try{
             var isTokenValid = jwt.verify(req.cookies.accessToken,"uiop@@4743")
             res.redirect('/dashboard')
-        }catch(error){}
+        }catch(error){
+        }
     }
     res.render(__dirname+"/views/login.ejs")
 })
@@ -54,7 +55,7 @@ app.get("/dashboard",(req,res)=>{
         }
     }
  } else{
-        res.redirect('/login')
+        res.redirect('/dashboard')
     }
 
     res.render(__dirname+"/views/dashboard.ejs")
