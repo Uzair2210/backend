@@ -18,7 +18,7 @@ router.post("/login", async (req, res) => {
 
 
             res.cookie("accessToken",token,{secure:true,httpOnly:true})
-            res.cookie("refrshToken",token1,{secure:true,httpOnly:true})
+            res.cookie("refreshToken",token1,{secure:true,httpOnly:true})
 
             res.json({
                 success:true,
