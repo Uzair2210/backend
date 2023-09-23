@@ -55,7 +55,7 @@ app.get("/dashboard",(req,res)=>{
         }
     }
  } else{
-        res.redirect('/dashboard')
+        res.redirect('/login')
     }
 
     res.render(__dirname+"/views/dashboard.ejs")
