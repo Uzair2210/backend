@@ -13,9 +13,12 @@ router.post("/login", async (req, res) => {
 
         if((userData.username === data.username)  && (userData.password === data.password)){
 
-            var token = jwt.sign({username:"admin"},"uiop@@4743",{expiresIn:"30s"})
+            var token = jwt.sign({username:"admin"},"uiop@@4743",{expiresIn:"30s"})            
+            var token1 = jwt.sign({username:"admin"},"uiop@@4743",{expiresIn:"7d"})            
+
 
             res.cookie("accessToken",token,{secure:true,httpOnly:true})
+            res.cookie("refrshToken",token1,{secure:true,httpOnly:true})
 
             res.json({
                 success:true,
