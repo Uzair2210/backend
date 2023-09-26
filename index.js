@@ -21,7 +21,7 @@ app.get("/",(req,res)=>{
 })
 
 app.get('/register', (req, res) => {
-    res.render('register');
+    res.render(__dirname+"/views/register.ejs");
   });
 
 app.get("/login",(req,res)=>{
