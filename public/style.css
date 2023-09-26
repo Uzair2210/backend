@@ -48,6 +48,14 @@ input[type="text"] {
   font-size: 16px;
 }
 
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
 .gender-details {
   margin-top: 20px;
 }

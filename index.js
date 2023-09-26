@@ -4,7 +4,7 @@ const authRoutes = require('./routes/auth')
 const mongoose = require('mongoose')
 const cookieParser = require('cookie-parser')
 const jwt = require('jsonwebtoken')
-const studentsRoutes = require('./routes/form')
+const formRoutes = require('./routes/form')
 
 
 app.set("view engine" , "ejs")
@@ -13,14 +13,16 @@ app.use(cookieParser())
 
 
 app.use(express.json())
-app.use('/api/students',studentsRoutes)
 app.use('/api/auth',authRoutes)
+app.use('/api/form',formRoutes)
 
 app.get("/",(req,res)=>{
     res.render(__dirname+"/views/index.ejs")
 })
 
-
+app.get('/register', (req, res) => {
+    res.render('register');
+  });
 
 app.get("/login",(req,res)=>{
     if(req.cookies.accessToken){

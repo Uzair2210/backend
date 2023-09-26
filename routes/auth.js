@@ -1,5 +1,39 @@
 const router = require('express').Router()
 const jwt = require('jsonwebtoken')
+const UserModel = require("../models/users")
+const bcrypt = require('bcrypt')
+
+
+router.post("/register",async (req,res)=>{
+    try {
+
+        var hashedPassword = await bcrypt.hash(req.body.password,10)
+
+        var user = await UserModel.create({...req.body,password:hashedPassword})
+
+        res.json({
+            success:true,
+            message:user
+        })
+        
+        
+
+    } catch (error) {
+        res.json({
+            success:false,
+            message:"Something went wrong, Please try again later!"
+        })
+    }
+})
+
+
+
+
+
+
+
+
+
 
 
 router.post("/login", async (req, res) => {

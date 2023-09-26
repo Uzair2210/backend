@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const registrationModel = require('../models/studentsModel');
+const registrationModel = require('../models/users');
 
 router.get('/', async function (req, res) {
     var students = await registrationModel.create(req.query);
